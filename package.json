@@ -1,0 +1,29 @@
+{
+    "devDependencies": {
+        "@symfony/webpack-encore": "^4.3.0",
+        "core-js": "^3.30.1",
+        "regenerator-runtime": "^0.13.11",
+        "sass": "^1.62.0",
+        "sass-loader": "^13.2.2",
+        "webpack-notifier": "^1.15.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@editorjs/checklist": "^1.5.0",
+        "@editorjs/editorjs": "^2.26.5",
+        "@editorjs/embed": "^2.5.3",
+        "@editorjs/header": "^2.7.0",
+        "@editorjs/list": "^1.8.0",
+        "@fortawesome/fontawesome-free": "^6.4.0",
+        "@tarekraafat/autocomplete.js": "^10.2.7",
+        "bootstrap": "^5.2.3",
+        "javascript-time-ago": "^2.5.9"
+    }
+}

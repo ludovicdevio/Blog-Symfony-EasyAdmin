@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% set article = entity %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="article-title">{{ article.title }}</h1>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col">
+                <div id="article-content" class="article-content">
+            </div>
+        </div>
+
+
+        </div>
+
+        <h2 class="comments-title mt-5"><span id="comment-count">{{ article.comments|length }}</span> commentaire(s)</h2>
+
+        <hr>
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <div class="comment-area mb-5">
+                {{ form(commentForm, { attr: { class: 'comment-form' } }) }}
+            </div>
+            <hr>
+        {% endif %}
+
+        <div class="comment-list mt-5" id="comments">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="article-data d-none"
+         data-content="{{ article.content|json_encode }}"
+         data-id="{{ article.id }}"
+         data-is-author="{{ app.user == article.author and not preview }}"
+    >
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('article') }}
+    {{ encore_entry_script_tags('comment') }}
+{% endblock %}
