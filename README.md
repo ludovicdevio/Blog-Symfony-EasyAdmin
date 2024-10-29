@@ -1,4 +1,4 @@
-# Création d'un blog (CMS) avec Symfony 6, Bootstrap 5 et EasyAdmin 4
+# Création d'un blog (CMS) avec Symfony 7, Bootstrap, EasyAdmin et API Platform
 
 ⚙️ Installation
 --------------
